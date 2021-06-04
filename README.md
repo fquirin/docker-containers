@@ -20,6 +20,8 @@ Good to know:
 - To fully reset a container it needs to be stopped and removed.
 - The state of a running or stopped container can be made permanent via a commit.
 - Commits create additional layers that can increase the container size significantly.
+- Commits will ignore external data from volumes
+- If you create a volume from an empty folder and add it to a container using a non-empty folder inside the container it will be filled with the container data. This ONLY works for named volumes.
 
 ## Useful commands / Cheat Sheet
 
@@ -52,6 +54,12 @@ Some variables used in cheat sheet:
 - enter running container via bash: `sudo docker exec -it [container-name] /bin/bash`
 - stop background container: `sudo docker stop [container-name]`
 - restart a stopped container: `sudo docker start [container-name]`
+
+### Volumes
+
+- list all volumes: `sudo docker volume ls`
+- create a volume: `sudo docker volume create --opt type=none --opt device=[host-folder] --opt o=bind [volume-name]`
+- remove a volume: `sudo docker volume rm [volume-name]`
 
 ### Upload
 
