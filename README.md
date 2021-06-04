@@ -16,8 +16,8 @@ sh get-docker.sh
 The lifecycle of a Docker image/container: `pull -> run -> stop -> remove -> delete`  
   
 Good to know: 
-- A stopped container keeps its state (internal programs are closed though).
-- To reset a container it needs to be removed.
+- A stopped container keeps its state and can be started again (internal programs are closed though).
+- To fully reset a container it needs to be stopped and removed.
 - The state of a running or stopped container can be made permanent via a commit.
 - Commits create additional layers that can increase the container size significantly.
 
@@ -48,8 +48,10 @@ Some variables used in cheat sheet:
 - run with bash: `sudo docker run -it --name [container-name] -p [port-outside]:[port-inside] [image-tag]`
 - run with bash (overwrite entrypoint): `sudo docker run -it --name [container-name] --entrypoint=/bin/bash [image-tag]`
 - run with volume and auto-remove: `sudo docker run --rm -it -v [volume-name/folder-outside]:[folder-inside] [image-tag]`
-- run container in background: ``
+- run container in background: `sudo docker run --rm -d [image-tag]`
 - enter running container via bash: `sudo docker exec -it [container-name] /bin/bash`
+- stop background container: `sudo docker stop [container-name]`
+- restart a stopped container: `sudo docker start [container-name]`
 
 ### Upload
 
