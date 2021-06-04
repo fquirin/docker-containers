@@ -21,7 +21,7 @@ Good to know:
 - The state of a running or stopped container can be made permanent via a commit.
 - Commits create additional layers that can increase the container size significantly.
 - Commits will ignore external data from volumes
-- If you create a volume from an empty folder and add it to a container using a non-empty folder inside the container it will be filled with the container data. This ONLY works for named volumes.
+- If you create a volume using an empty folder (host) and connect it to a container folder that is not empty (-v flag) it will be filled with the container data at first run. This ONLY works for named volumes.
 
 ## Useful commands / Cheat Sheet
 
