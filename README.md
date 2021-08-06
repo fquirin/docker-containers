@@ -51,6 +51,7 @@ Some variables used in cheat sheet:
 - run with bash: `sudo docker run -it --name [container-name] -p [port-outside]:[port-inside] [image-tag]`
 - run with bash (overwrite entrypoint): `sudo docker run -it --name [container-name] --entrypoint=/bin/bash [image-tag]`
 - run with volume and auto-remove: `sudo docker run --rm -it -v [volume-name/folder-outside]:[folder-inside] [image-tag]`
+- run with ENV variable (e.g for internal settings): `sudo docker run --env VAR1=value1 [image-tag]`
 - run container in background: `sudo docker run --rm -d [image-tag]`
 - enter running container via bash: `sudo docker exec -it [container-name] /bin/bash`
 - stop background container: `sudo docker stop [container-name]`
