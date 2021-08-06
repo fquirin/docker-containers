@@ -42,6 +42,7 @@ Some variables used in cheat sheet:
 ### Build and Update
 
 - build Dockerfile: `sudo docker build -t [new-image-tag] .`
+- build Dockerfile without cache: `sudo docker build --no-cache -t [new-image-tag] .`
 - commit changes: `sudo docker commit [container-name] [new-image-tag]`
 - rename image: `sudo docker image tag [old-image-tag] [new-image-tag]`
 
