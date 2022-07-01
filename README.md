@@ -68,3 +68,8 @@ Some variables used in cheat sheet:
 - login to default registry (e.g. Docker-HUB): `sudo docker login --username=[my-user]`
 - push image: `sudo docker image push [image-tag]`
 - logout of registry: `sudo docker logout`
+
+### Create Manifest
+
+- create: `sudo docker manifest create [common-image-tag] --amend [image-tag-A] --amend [image-tag-B] ...`
+- upload: `sudo docker manifest push [common-image-tag]`
