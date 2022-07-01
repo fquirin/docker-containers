@@ -36,7 +36,7 @@ COPY ./install /home/admin/install/
 # Run
 RUN echo "Installing Mary-TTS ..." && \
     mkdir -p /home/admin/marytts && cd /home/admin/marytts && \
-    wget https://github.com/fquirin/marytts/releases/download/v6.0.X.1-SNAPSHOT/marytts.zip && \
+    wget https://github.com/fquirin/marytts/releases/latest/download/marytts.zip && \
     unzip marytts.zip && \
     rm marytts.zip && \
     sudo rm /etc/nginx/sites-enabled/default && \
