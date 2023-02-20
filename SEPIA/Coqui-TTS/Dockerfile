@@ -34,9 +34,13 @@ RUN echo 'Installing app...' && \
     cd /home/admin/coqui-tts && \
     git clone https://github.com/fquirin/TTS && \
     cd TTS && \
+#   NOTE: for x86 we can use torch+cpu and torchaudio+cpu from https://download.pytorch.org/whl/torch_stable.html, e.g.:
+#   pip3 install https://download.pytorch.org/whl/cpu/torch-1.13.1%2Bcpu-cp310-cp310-linux_x86_64.whl && \
+#   pip3 install https://download.pytorch.org/whl/cpu/torchaudio-0.13.1%2Bcpu-cp310-cp310-linux_x86_64.whl && \
     pip3 install -e . && \
 #
 #   Clean up
+    pip3 cache purge && \
     sudo apt remove -y gcc g++ && \
     sudo apt clean && sudo apt autoclean && sudo apt autoremove -y
 #
