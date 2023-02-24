@@ -24,10 +24,11 @@ RUN echo 'Installing app...' && \
 #
 #   App packages
     sudo apt install -y --no-install-recommends \
-	python3-pip python3-dev python3-setuptools python3-wheel python3-venv \
-        libsndfile1 \
-        gcc g++ \
-	nginx && \
+		python3-pip python3-dev python3-setuptools python3-wheel python3-venv \
+		espeak-ng libsndfile1 \
+		gcc g++ \
+		nginx && \
+# export PATH=$HOME/.local/bin:$PATH && \
 #   Pip packages
     pip3 install --upgrade pip && \
     mkdir -p /home/admin/coqui-tts && \
